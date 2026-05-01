@@ -137,7 +137,7 @@ func (m *MultiClusterInformer) listWatch(ctx context.Context) {
 			if event.Type == watch.Error {
 				klog.V(2).InfoS("Watch error, resetting to RV=0",
 					"resource", m.cfg.GroupResource)
-				m.lastRV.Store(nil)
+				m.lastRV.Store("0")
 				return
 			}
 
